@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upcoming Activities</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Internal CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button {
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            color: white;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .activity-item {
+            background: #f1f5ff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            font-size: 13px;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: white;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>CampusConnect</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/activities">Activities</a>
+        <a href="/forum">Forum</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Add Upcoming Activity</h3>
+        <input type="text" id="title" placeholder="Activity Title">
+        <textarea id="description" placeholder="Description"></textarea>
+        <input type="date" id="date">
+        <button onclick="addActivity()">Add Activity</button>
+    </div>
+
+    <div class="card">
+        <h3>Upcoming Activities</h3>
+        <div id="activityList"></div>
+    </div>
+
+</div>
+
+<footer>
+    CampusConnect © 2026
+</footer>
+
+<!-- Internal JS -->
+<script>
+    function addActivity() {
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const date = document.getElementById("date").value;
+
+        if (!title || !date) {
+            alert("Title and Date are required.");
+            return;
+        }
+
+        const activityList = document.getElementById("activityList");
+
+        const div = document.createElement("div");
+        div.classList.add("activity-item");
+
+        div.innerHTML = `
+            <strong>${title}</strong>
+            <p>${description}</p>
+            <p class="date">${date}</p>
+        `;
+
+        activityList.appendChild(div);
+
+        document.getElementById("title").value = "";
+        document.getElementById("description").value = "";
+        document.getElementById("date").value = "";
+    }
+</script>
+
+</body>
+</html>

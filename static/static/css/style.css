@@ -1,0 +1,120 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #ea666f, #a24b98);
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+nav h2 {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffd369;
+}
+
+/* CONTAINER */
+.container {
+    padding: 40px;
+}
+
+/* CARD DESIGN */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #3f3f3d;
+}
+
+/* FORM STYLING */
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 8px 0 15px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #e3e341;
+    outline: none;
+    box-shadow: 0 0 5px rgba(219, 60, 35, 0.4);
+}
+
+/* BUTTON */
+button {
+    background: linear-gradient(90deg, #ea6666, #a24b82);
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* DEADLINE COLORS */
+.deadline {
+    font-weight: 500;
+    padding: 8px;
+    border-radius: 8px;
+    background: #f1f5ff;
+    margin-bottom: 8px;
+}
+
+/* ALERT RED */
+.deadline.urgent {
+    background: #ffe5e5;
+    color: #d00000;
+    font-weight: 600;
+}
+
+/* FOOTER STYLE (optional if you add later) */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: white;
+    opacity: 0.8;
+}

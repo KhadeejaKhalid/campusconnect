@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusConnect - Forum</title>
+
+    <!-- CSS CONNECTION -->
+    <link rel="stylesheet" href="static\static\css\style.css">
+
+</head>
+<body>
+
+<nav>
+    <h2>CampusConnect</h2>
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/timetable">Timetable</a>
+        <a href="/labs">Labs</a>
+        <a href="/forum">Forum</a>
+    </div>
+</nav>
+
+<div class="container">
+<div class="card">
+<h3>Post Anonymous Doubt</h3>
+<form method="POST">
+<input name="question" placeholder="Type your doubt..." required>
+<button type="submit">Post</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Questions</h3>
+{% for post in posts %}
+<p>{{ post.question }}</p>
+<hr>
+{% endfor %}
+</div>
+</div>
+<script src="static\static\main.js"></script>
+</body>
+</html>

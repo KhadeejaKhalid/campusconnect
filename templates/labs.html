@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusConnect - Labs</title>
+
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="static\static\css\style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>CampusConnect</h2>
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/timetable">Timetable</a>
+        <a href="/labs">Labs</a>
+        <a href="/forum">Forum</a>
+    </div>
+</nav>
+
+<div class="container">
+<div class="card">
+<h3>Add Lab</h3>
+<form method="POST">
+<input name="subject" placeholder="Subject" required>
+<input type="date" name="deadline" required>
+<button type="submit">Add</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Lab Deadlines</h3>
+{% for lab in labs %}
+<p class="deadline" data-date="{{ lab.deadline }}">
+{{ lab.subject }} - {{ lab.deadline }}
+</p>
+{% endfor %}
+</div>
+</div>
+
+<script src="static\static\main.js"></script>
+
+</body>
+</html>

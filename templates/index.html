@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusConnect</title>
+    <link rel="stylesheet" href="static\static\css\style.css">
+</head>
+<body>
+<nav>
+    <h2>CampusConnect</h2>
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/timetable">Timetable</a>
+        <a href="/labs">Labs</a>
+        <a href="/forum">Forum</a>
+    </div>
+</nav>
+
+<div class="container">
+
+<div class="card">
+<h3>Upcoming Labs</h3>
+{% for lab in labs %}
+<p class="deadline" data-date="{{ lab.deadline }}">
+{{ lab.subject }} - {{ lab.deadline }}
+</p>
+{% endfor %}
+</div>
+
+<div class="card">
+<h3>Timetable</h3>
+{% for row in timetable %}
+<p>{{ row.day }} - {{ row.subject }} ({{ row.time }})</p>
+{% endfor %}
+</div>
+</div>
+<script src="static\static\main.js"></script>
+</script>
+</body>
+</html>
